@@ -38,19 +38,13 @@ button:hover {
 }
 
 button:focus,
-form:focus {
+input:focus {
   outline: none;
-}
-
-img {
-  width: 100%;
-  overflow: hidden;
-  margin: 0;
 }
 
 .container-12 {
   display: grid;
-  grid-template-columns: repeat(12, minmax(60px, 1fr));
+  grid-template-columns: repeat(12, minmax(10px, 1fr));
   grid-template-rows: repeat(12, minmax(0, auto));
   grid-column-gap: 20px;
   width: 100%;
@@ -209,7 +203,7 @@ img {
 
 .container-8 {
   display: grid;
-  grid-template-columns: repeat(12, minmax(60px, 1fr));
+  grid-template-columns: repeat(12, minmax(10px, 1fr));
   grid-template-rows: repeat(12, minmax(0, auto));
   grid-column-gap: 20px;
   width: 100%;
@@ -364,6 +358,10 @@ img {
 }
 .container-8 .row-end {
   grid-row-end: -1;
+}
+
+.align-self-center {
+  align-self: center;
 }
 
 .ivory {

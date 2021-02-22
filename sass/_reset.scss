@@ -37,12 +37,6 @@ button:hover {
 }
 
 button:focus,
-form:focus {
+input:focus {
   outline: none;
-}
-
-img {
-  width: 100%;
-  overflow: hidden;
-  margin: 0;
 }

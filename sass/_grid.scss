@@ -3,7 +3,7 @@ $column-gap: 20px;
 
 @mixin container($columns) {
   display: grid;
-  grid-template-columns: repeat(12, minmax(60px, 1fr) );
+  grid-template-columns: repeat(12, minmax(10px, 1fr) );
   grid-template-rows: repeat(12, minmax(0, auto));
   grid-column-gap: $column-gap;
   width: $width;
@@ -43,4 +43,8 @@ $column-gap: 20px;
 
 .container-8 {
   @include container(8);
+}
+
+.align-self-center {
+  align-self: center;
 }
