@@ -1,29 +1,33 @@
 $width: 100%;
 $column-gap: 20px;
 
-@mixin container($columns) {
+@mixin container($columns, $rows) {
   display: grid;
-  grid-template-columns: repeat(12, minmax(10px, 1fr) );
-  grid-template-rows: repeat(12, minmax(0, auto));
+  grid-template-columns: repeat($columns, minmax(10px, 1fr) );
+  grid-template-rows: repeat($rows, minmax(0, auto));
   grid-column-gap: $column-gap;
   width: $width;
   margin: 0 auto;
 
-  @for $i from 1 through 12 {
+  @for $i from 1 through $columns {
     .col-start-#{$i} {
       grid-column-start: $i;
     }
+  }
 
+  @for $i from 1 through $rows {
     .row-start-#{$i} {
       grid-row-start: $i;
     }
   }
 
-  @for $i from 2 through 13 {
+  @for $i from 2 through ($columns + 1) {
     .col-end-#{$i} {
       grid-column-end: $i;
     }
+  }
 
+  @for $i from 2 through ($rows + 1) {
     .row-end-#{$i} {
       grid-row-end: $i;
     }
@@ -37,12 +41,20 @@ $column-gap: 20px;
   }
 }
 
-.container-12 {
-  @include container(12);
+.container-12x12 {
+  @include container(12, 12);
 }
 
-.container-8 {
-  @include container(8);
+.container-12x8 {
+  @include container(12, 8);
+}
+
+.container-8x12 {
+  @include container(8, 12);
+}
+
+.container-8x8 {
+  @include container(8, 8);
 }
 
 .align-self-center {
